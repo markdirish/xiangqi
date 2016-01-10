@@ -92,8 +92,12 @@ function getFile(square) {
 	return (square % RANK_SIZE);
 }
 
-function getPiece(square) {
-	return GameBoard.pieces[square];
+function getPiece(pos) {
+	return GameBoard.pieces[pos];
+}
+
+function setPiece(pos, piece) {
+    GameBoard.pieces[pos] = piece;
 }
 
 function onBoard(square) {
@@ -125,7 +129,7 @@ function printBoard() {
 	for (var i = (FILE_SIZE - 1); i >= 0; i--) {
         var rank = " ";
 		for (var j = 0; j < 9; j++) {
-			rank += " " + GameBoard.pieces[(i*RANK_SIZE) + j];
+			rank += " " + getPiece((i*RANK_SIZE) + j);
 		}
         console.log("File " + i + rank);
 	}
@@ -133,16 +137,16 @@ function printBoard() {
 
 function move(source, destination) {
 	
-	var captured_piece = GameBoard.pieces[destination];
+	var captured_piece = getPiece(destination);
 	
-	var piece = GameBoard.pieces[source];
-            
-	GameBoard.pieces[source] = PIECES.EMPTY;
-	GameBoard.pieces[destination] = piece;
+	var piece = getPiece(source);
+           
+    setPiece(source, PIECES.EMPTY);
+    setPiece(destination, piece);
             
     // if the piece was a king, update the king positions
-    if (GameBoard.pieces[destination] % 7 == 1) {
-        var color = Math.floor(GameBoard.pieces[destination] / 7);
+    if (getPiece(destination) % 7 == 1) {
+        var color = Math.floor(getPiece(destination) / 7);
         KING_SQUARE[color] = destination;
     }
 	
