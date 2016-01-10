@@ -193,7 +193,7 @@ function getMoves(square, attack) {
         attack = 0;
     }
 	
-	var piece = GameBoard.pieces[square];
+	var piece = getPiece(square);
 	
 	if (piece != PIECES.EMPTY) {
 		var color;
