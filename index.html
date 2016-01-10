@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Xia Qi: Play Chinese Chess!</title>
+		
+		<link rel="stylesheet" href="board.css">
+		
+		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
+        <script src="movegen.js"></script>
+		<script src="gui.js"></script>
+        <script src="evaluate.js"></script>
+        <script src="search.js"></script>
+		<script src="definitions.js"></script>
+		<script src="board.js"></script>
+		<script src="init.js"></script>
+
+	</head>
+	
+	<body>
+		<!--<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Play</a></li>
+				<li><a href="#">Learn</a></li>
+				<li><a href="#">Contact</a></li>
+			<ul>
+		</nav>-->
+		
+        <div id="game" class="shadow">
+            <div id="board">
+                
+            </div>
+			
+            <div id="controls">
+				
+				<div class="player_info">
+					<div class="player_header">
+						<div id="black_clock" class="clock"></div>
+						<div class="player_name">Computer A.I.</div>
+						<div class="player_elo"></div>
+					</div>
+					<div id="black_captured" class="captured">
+					</div>
+				</div>
+				
+				<div id="record">
+                    
+				</div>
+				
+				<div class="player_info">
+					<div id="red_captured" class="captured">
+					</div>
+					<div class="player_header">
+						<div id="red_clock" class="clock"></div>
+						<div class="player_name">Human</div>
+						<div class="player_elo"></div>
+					</div>
+				</div>
+            </div>
+        </div>
+	</body>
+</html>

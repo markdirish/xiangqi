@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="1000" width="1000">
+  <circle id="outline" fill="#f6f6f6" stroke-width="20" stroke="black" r="490" cy="500" cx="500"/>
+  <circle id="color" fill="none" stroke-width="40" stroke="black" r="430" cy="500" cx="500"/>
+  <text id="piece_name" font-size="650" text-anchor="middle" alignment-baseline="middle" fill="black" y="550" x="500" font-weight="bold">&#21330;</text>
+</svg>
